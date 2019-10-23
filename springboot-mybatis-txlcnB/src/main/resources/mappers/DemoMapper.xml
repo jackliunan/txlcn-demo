@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wondersgroup.mapper.DemoMapper">
+
+    <insert id="save" parameterType="com.wondersgroup.entity.Demo">
+        insert into
+        t_demo (kid,
+        demo_field,
+        group_id,
+        create_time,
+        app_name)
+        values
+        (#{kid},
+        #{demoField},
+        #{groupId},
+        #{createTime},
+        #{appName})
+    </insert>
+
+    <delete id="deleteByKId">
+        delete from t_demo where id=#{id}
+    </delete>
+</mapper>

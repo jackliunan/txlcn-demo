@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wondersgroup.mapper.UserMapper">
+
+    <select id="selectLibrarian" resultType="com.wondersgroup.entity.User">
+        select *
+        from tb_user
+    </select>
+
+    <insert id="save" parameterType="com.wondersgroup.entity.User">
+        insert into
+        tb_user
+        (id,
+        username,
+        password) values
+        (#{id},
+        #{username},
+        #{password})
+    </insert>
+
+</mapper>

@@ -1,0 +1,26 @@
+server:
+  port: 10103
+
+spring:
+  application:
+    name: txlcn-demo-spring-service-c
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.92.22:3306/txlcn-demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      username: root
+      password: root
+  cloud:
+    nacos:
+      config:
+        server-addr: jxwonders.erpm.cn:13493
+        namespace: ec7d92c8-1c17-49d1-97ec-1ceaf10a0cae
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        shared-dataids: redis_local.yaml,mongo.yaml
+      discovery:
+        server-addr: jxwonders.erpm.cn:13493
+        namespace: 61c53ad5-924f-479f-9dc8-64e0a90357fd
+mybatis:
+  type-aliases-package: com.wondersgroup.entity
+  mapperLocations: classpath:mappers/*.xml
